@@ -90,18 +90,18 @@ const insertDivs = () => {
   const globalMainX = data.left + data.width / 2;
   const globalMainY = data.top + data.height / 2;
 
-  const otherCirclesIndexes = Object.keys(windowsPositions).filter(
+  const otherNumbers = Object.keys(windowsPositions).filter(
     (number) => number !== windowNumber.toString()
   );
 
-  otherCirclesIndexes.forEach((i) => {
-    const circleData = windowsPositions[i];
-    const circleMainX = circleData.left + circleData.width / 2;
-    const circleMainY = circleData.top + circleData.height / 2;
-    const cirlcleCenterX = data.width / 2 + (circleMainX - globalMainX);
-    const cirlcleCenterY = data.height / 2 + (circleMainY - globalMainY);
+  otherNumbers.forEach((i) => {
+    const logoData = windowsPositions[i];
+    const mainX = logoData.left + logoData.width / 2;
+    const mainY = logoData.top + logoData.height / 2;
+    const centerX = data.width / 2 + (mainX - globalMainX);
+    const centerY = data.height / 2 + (mainY - globalMainY);
 
-    createDiv(cirlcleCenterY, cirlcleCenterX);
+    createDiv(centerY, centerX);
   });
 };
 
